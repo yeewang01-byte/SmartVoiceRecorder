@@ -20,7 +20,9 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: gradle
+    
+    - name: 🔧 Setup Gradle
+      uses: gradle/gradle-build-action@v2
     
     - name: 🔧 Setup Android SDK
       uses: android-actions/setup-android@v3
@@ -30,14 +32,10 @@ jobs:
           build-tools;34.0.0
         accept-android-sdk-licenses: true
     
-    - name: 📦 Initialize Gradle Wrapper
-      run: gradle wrapper --gradle-version 8.1
-    
-    - name: 🔐 Make Gradlew Executable
-      run: chmod +x gradlew
-    
     - name: 🧹 Clean and Build
       run: |
+        gradle wrapper --gradle-version 8.1
+        chmod +x gradlew
         ./gradlew clean
         ./gradlew assembleRelease --no-daemon -Dorg.gradle.jvmargs="-Xmx3g"
     
@@ -84,7 +82,9 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: gradle
+    
+    - name: 🔧 Setup Gradle
+      uses: gradle/gradle-build-action@v2
     
     - name: 🔧 Setup Android SDK
       uses: android-actions/setup-android@v3
@@ -94,14 +94,11 @@ jobs:
           build-tools;34.0.0
         accept-android-sdk-licenses: true
     
-    - name: 📦 Initialize Gradle Wrapper
-      run: gradle wrapper --gradle-version 8.1
-    
-    - name: 🔐 Make Gradlew Executable
-      run: chmod +x gradlew
-    
     - name: 🔨 Build Signed APK
-      run: ./gradlew assembleRelease
+      run: |
+        gradle wrapper --gradle-version 8.1
+        chmod +x gradlew
+        ./gradlew assembleRelease
     
     - name: 🔐 Create Release
       uses: softprops/action-gh-release@v1
