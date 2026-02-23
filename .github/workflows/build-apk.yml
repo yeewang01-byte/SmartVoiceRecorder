@@ -33,7 +33,9 @@ jobs:
         gradle wrapper --gradle-version 8.1
         chmod +x gradlew
         ./gradlew clean
-        ./gradlew assembleRelease --no-daemon -Dorg.gradle.jvmargs="-Xmx3g"
+        ./gradlew assembleRelease --no-daemon
+      env:
+        GRADLE_OPTS: "-Xmx3g"
     
     - name: ✅ Check APK
       run: |
@@ -90,7 +92,9 @@ jobs:
       run: |
         gradle wrapper --gradle-version 8.1
         chmod +x gradlew
-        ./gradlew clean assembleRelease --no-daemon -Dorg.gradle.jvmargs="-Xmx3g"
+        ./gradlew clean assembleRelease --no-daemon
+      env:
+        GRADLE_OPTS: "-Xmx3g"
     
     - name: 🔐 Create Release
       uses: softprops/action-gh-release@v1
