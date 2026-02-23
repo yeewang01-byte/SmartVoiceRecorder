@@ -1,0 +1,62 @@
+🚀 APK 生成快速指南
+
+现在开始 GitHub Actions 自动构建！
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+第一步：创建 GitHub 仓库
+
+访问: https://github.com/new
+
+填写以下信息：
+- Repository name: SmartVoiceRecorder
+- Description: Smart Voice Recorder App
+- Public (开放)
+- 不要选 "Add README"
+
+点击 "Create repository"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+第二步：复制仓库 URL
+
+创建后，找到绿色的 "Code" 按钮
+复制 HTTPS URL，类似：
+https://github.com/你的用户名/SmartVoiceRecorder.git
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+第三步：上传代码
+
+回到终端，运行:
+  ./github_upload.sh
+
+粘贴刚才复制的 URL
+
+脚本会自动上传代码到 GitHub
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+第四步：等待构建完成
+
+访问: https://github.com/你的用户名/SmartVoiceRecorder/actions
+
+观察构建进度，通常 5-10 分钟完成
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+第五步：下载 APK
+
+构建完成后，下载 Artifacts 中的 SmartVoiceRecorder-APK.zip
+
+解压取出 app-release.apk
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ 完成！
+
+现在就开始吧：
+1. 打开浏览器访问 https://github.com/new
+2. 按照上面的步骤创建仓库
+3. 复制 URL
+4. 回到终端运行 ./github_upload.sh
