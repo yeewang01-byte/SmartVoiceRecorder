@@ -31,15 +31,12 @@ jobs:
     
     - name: 🧹 Prepare Gradle
       run: |
-        gradle wrapper --gradle-version 8.1 || true
-        ls -la gradlew || echo "gradlew not found"
-    
-    - name: 🧹 Clean and Build
-      run: |
+        gradle wrapper --gradle-version 8.1
         chmod +x ./gradlew
         ./gradlew --version
-        ./gradlew clean --refresh-dependencies
-        ./gradlew assembleRelease --no-daemon --info
+    
+    - name: 🧹 Build Release APK
+      run: ./gradlew assembleRelease --no-daemon
       env:
         GRADLE_OPTS: "-Xmx3g"
     
@@ -97,15 +94,12 @@ jobs:
     
     - name: 🧹 Prepare Gradle
       run: |
-        gradle wrapper --gradle-version 8.1 || true
-        ls -la gradlew || echo "gradlew not found"
-    
-    - name: 🧹 Clean and Build
-      run: |
+        gradle wrapper --gradle-version 8.1
         chmod +x ./gradlew
         ./gradlew --version
-        ./gradlew clean --refresh-dependencies
-        ./gradlew assembleRelease --no-daemon --info
+    
+    - name: 🧹 Build Release APK
+      run: ./gradlew assembleRelease --no-daemon
       env:
         GRADLE_OPTS: "-Xmx3g"
     
