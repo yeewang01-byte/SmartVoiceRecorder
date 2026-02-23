@@ -23,10 +23,10 @@ jobs:
         cache: gradle
     
     - name: 🔧 Setup Android SDK
-      run: |
-        mkdir -p ~/.android
-        echo "count=0" > ~/.android/repositories.cfg
-        ls -la $ANDROID_SDK_ROOT/platforms || true
+      uses: android-actions/setup-android@v3
+      with:
+        api-level: 34
+        build-tools-version: 34.0.0
     
     - name: 📦 Make Gradlew Executable
       run: chmod +x gradlew
