@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.smartvoice.recorder"
-    compileSdk = 34
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "com.smartvoice.recorder"
         minSdk = 28
-        targetSdk = 34
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0.0"
 
