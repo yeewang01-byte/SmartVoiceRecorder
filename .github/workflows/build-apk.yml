@@ -23,21 +23,18 @@ jobs:
         cache: gradle
     
     - name: 🔧 Setup Android SDK
-      uses: android-actions/setup-android@v3
-      with:
-        api-level: 34
-        build-tools-version: 34.0.0
+      run: |
+        mkdir -p ~/.android
+        echo "count=0" > ~/.android/repositories.cfg
+        ls -la $ANDROID_SDK_ROOT/platforms || true
     
     - name: 📦 Make Gradlew Executable
       run: chmod +x gradlew
     
-    - name: 🧹 Clean Project
-      run: ./gradlew clean --no-build-cache
-    
-    - name: 🔨 Build Release APK
-      run: ./gradlew assembleRelease --no-daemon
-      env:
-        GRADLE_OPTS: -Xmx2048m -XX:MaxPermSize=512m
+    - name: 🧹 Clean and Build
+      run: |
+        ./gradlew clean
+        ./gradlew assembleRelease --no-daemon -Dorg.gradle.jvmargs="-Xmx3g"
     
     - name: ✅ Check APK
       run: |
