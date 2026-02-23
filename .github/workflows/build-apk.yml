@@ -29,12 +29,17 @@ jobs:
         unset GRADLE_OPTS
         $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager "platforms;android-33" "build-tools;33.0.2" --no_https
     
+    - name: 🧹 Prepare Gradle
+      run: |
+        gradle wrapper --gradle-version 8.1 || true
+        ls -la gradlew || echo "gradlew not found"
+    
     - name: 🧹 Clean and Build
       run: |
-        gradle wrapper --gradle-version 8.1
-        chmod +x gradlew
-        ./gradlew clean
-        ./gradlew assembleRelease --no-daemon
+        chmod +x ./gradlew
+        ./gradlew --version
+        ./gradlew clean --refresh-dependencies
+        ./gradlew assembleRelease --no-daemon --info
       env:
         GRADLE_OPTS: "-Xmx3g"
     
@@ -90,11 +95,17 @@ jobs:
         unset GRADLE_OPTS
         $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager "platforms;android-33" "build-tools;33.0.2" --no_https
     
+    - name: 🧹 Prepare Gradle
+      run: |
+        gradle wrapper --gradle-version 8.1 || true
+        ls -la gradlew || echo "gradlew not found"
+    
     - name: 🧹 Clean and Build
       run: |
-        gradle wrapper --gradle-version 8.1
-        chmod +x gradlew
-        ./gradlew clean assembleRelease --no-daemon
+        chmod +x ./gradlew
+        ./gradlew --version
+        ./gradlew clean --refresh-dependencies
+        ./gradlew assembleRelease --no-daemon --info
       env:
         GRADLE_OPTS: "-Xmx3g"
     
