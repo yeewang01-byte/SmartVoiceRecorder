@@ -26,6 +26,7 @@ jobs:
     
     - name: 📦 Install SDK Components
       run: |
+        unset GRADLE_OPTS
         $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager "platforms;android-33" "build-tools;33.0.2" --no_https
     
     - name: 🧹 Clean and Build
@@ -86,6 +87,7 @@ jobs:
     
     - name: 📦 Install SDK Components
       run: |
+        unset GRADLE_OPTS
         $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager "platforms;android-33" "build-tools;33.0.2" --no_https
     
     - name: 🧹 Clean and Build
