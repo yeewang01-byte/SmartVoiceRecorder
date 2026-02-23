@@ -30,7 +30,10 @@ jobs:
           build-tools;34.0.0
         accept-android-sdk-licenses: true
     
-    - name: 📦 Make Gradlew Executable
+    - name: 📦 Initialize Gradle Wrapper
+      run: gradle wrapper --gradle-version 8.1
+    
+    - name: 🔐 Make Gradlew Executable
       run: chmod +x gradlew
     
     - name: 🧹 Clean and Build
@@ -91,7 +94,10 @@ jobs:
           build-tools;34.0.0
         accept-android-sdk-licenses: true
     
-    - name: 📦 Make Gradlew Executable
+    - name: 📦 Initialize Gradle Wrapper
+      run: gradle wrapper --gradle-version 8.1
+    
+    - name: 🔐 Make Gradlew Executable
       run: chmod +x gradlew
     
     - name: 🔨 Build Signed APK
