@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!--
+   Sample backup rules file; uncomment and customize as desired.
+   See https://developer.android.com/guide/topics/data/autobackup
+   for details about file backup rules.
+-->
+    <!-- Exclude specific shared preferences that contain GCM registration IDs -->
+    <exclude domain="sharedpref" path="com.google.android.gms.measurement.prefs.xml" />
+
+    <!-- Exclude all internal SharedPreferences in the "shared_prefs" directory -->
+    <exclude domain="sharedpref" path="device_info_prefs.xml" />
+
+    <!-- Exclude all files in the cache directory -->
+    <exclude domain="cache" />
+
+    <!-- Exclude all files in the "temp" app-specific directory -->
+    <exclude domain="file" path="temp/" />
+
+    <!-- Exclude image cache files -->
+    <exclude domain="file" path="image_cache/" />
+
+</full-backup-content>

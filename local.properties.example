@@ -1,0 +1,14 @@
+# Local properties
+sdk.dir=/Users/wangyi/Library/Android/sdk
+
+# Or if using environment variable:
+# sdk.dir=${ANDROID_HOME}
+
+# Skip tests during build (optional)
+# android.enableUnitTestBinaryResources=true
+
+# Enable data binding
+android.databinding.enableV2=true
+
+# Enable compose compiler metrics (optional)
+# compose.metrics=true

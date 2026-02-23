@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">智能录音笔</string>
+    <string name="my_recordings">我的录音</string>
+    <string name="search_recordings">搜索录音</string>
+    <string name="recent_recordings">最近的录音</string>
+    <string name="recording">正在录音</string>
+    <string name="audio_clear">音频清晰</string>
+    <string name="start_recording">开始录音</string>
+    <string name="stop_recording">停止</string>
+    <string name="pause_recording">暂停</string>
+    <string name="resume_recording">继续</string>
+    <string name="cancel_recording">取消</string>
+    <string name="ai_transcribing">AI 智能转写中...</string>
+    <string name="background_transcribe">后台转写</string>
+    <string name="transcript">转写</string>
+    <string name="summary">摘要</string>
+    <string name="key_points">关键要点</string>
+    <string name="action_items">行动步骤</string>
+    <string name="share">分享</string>
+    <string name="edit">编辑</string>
+    <string name="delete">删除</string>
+    <string name="rename">重命名</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string name="duration">时长</string>
+    <string name="file_size">文件大小</string>
+    <string name="created_time">创建时间</string>
+</resources>

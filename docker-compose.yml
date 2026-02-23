@@ -1,0 +1,22 @@
+# Docker Compose for Building Smart Voice Recorder APK
+
+version: '3.8'
+
+services:
+  android-builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/workspace
+      - gradle-cache:/root/.gradle
+      - android-sdk:/opt/android-sdk
+    environment:
+      - JAVA_HOME=/usr/local/openjdk-17
+      - ANDROID_HOME=/opt/android-sdk
+      - GRADLE_OPTS=-Xmx4096m -Xms1024m
+    command: bash -c "chmod +x gradlew && ./gradlew clean assembleRelease"
+
+volumes:
+  gradle-cache:
+  android-sdk:
