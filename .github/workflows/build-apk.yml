@@ -31,6 +31,12 @@ jobs:
     
     - name: 🧹 Prepare Gradle
       run: |
+        # Download a matching Gradle distribution, unzip and use it to prepare the wrapper
+        curl -sSLo gradle.zip https://services.gradle.org/distributions/gradle-8.1-bin.zip
+        unzip -q gradle.zip
+        export GRADLE_HOME="$PWD/gradle-8.1"
+        export PATH="$GRADLE_HOME/bin:$PATH"
+        gradle --version
         gradle wrapper --gradle-version 8.1
         chmod +x ./gradlew
         ./gradlew --version
@@ -94,6 +100,12 @@ jobs:
     
     - name: 🧹 Prepare Gradle
       run: |
+        # Download a matching Gradle distribution, unzip and use it to prepare the wrapper
+        curl -sSLo gradle.zip https://services.gradle.org/distributions/gradle-8.1-bin.zip
+        unzip -q gradle.zip
+        export GRADLE_HOME="$PWD/gradle-8.1"
+        export PATH="$GRADLE_HOME/bin:$PATH"
+        gradle --version
         gradle wrapper --gradle-version 8.1
         chmod +x ./gradlew
         ./gradlew --version
